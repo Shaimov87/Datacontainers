@@ -71,10 +71,8 @@ public:
 	ForwardList& operator=(const ForwardList& other) {
 		Element* Temp = other.Head;
 		while (Temp->pNext != nullptr) {
-			Element* New = new Element(Temp->Data);
+			push_front(Temp->Data);
 			Temp = Temp->pNext;
-			New->pNext = Head;
-			Head = New;
 		}
 
 		return *this;
